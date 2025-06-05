@@ -12,7 +12,7 @@ lcg.set_verbose(True)
 
 os.getenv('GOOGLE_API_KEY')
 generation_config = {"temperature": 0.6, "top_p": 1, "top_k": 1, "max_output_tokens": 2048}
-model = GoogleGenerativeAI(model="gemini-pro", generation_config=generation_config)
+model = GoogleGenerativeAI(model="models/gemini-1.5-flash-latest", generation_config=generation_config)
 
 prompt_template_auto = PromptTemplate(
     input_variables=['make', 'model', 'year', 'mileage', 'problem', 'symptoms'],
