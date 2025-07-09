@@ -1,122 +1,113 @@
 
-````markdown
-# 🚗 Auto Expert – Intelligent Vehicle Diagnostic Tool
+# 🚗 Auto Expert – AI-Powered Vehicle Diagnosis
 
-**Auto Expert** is an AI-powered diagnostic assistant designed to help vehicle owners and mechanics quickly identify and understand car issues based on described symptoms. Using cutting-edge technologies, it delivers accurate, structured, and easy-to-understand diagnoses along with actionable repair and maintenance recommendations.
-
----
-
-## ✨ Key Features
-
-- **🩺 Symptom-Based Diagnosis**  
-  Input vehicle details and observed symptoms — Auto Expert analyzes them using AI to suggest likely problems.
-
-- **📋 Structured, Easy-to-Read Reports**  
-  Clear output including:
-  - Diagnosis summary  
-  - Possible root causes  
-  - Practical repair suggestions  
-  - Preventive maintenance tips
-
-- **🖥️ Interactive Interface**  
-  Built with **Streamlit**, providing a responsive and user-friendly web interface across all devices.
-
-- **🤖 AI-Driven Insights**  
-  Powered by **Google Generative AI**, delivering intelligent, context-aware diagnostic responses.
-
-- **🔒 Secure & Configurable**  
-  Sensitive data like API keys are managed using **dotenv**, ensuring secure and flexible deployment.
+**Auto Expert** is an intelligent AI-powered tool that helps vehicle owners and mechanics quickly diagnose car problems based on described symptoms. With advanced reasoning and natural language understanding, it delivers expert-level insights, practical repair guidance, and preventive care suggestions — all in a simple, user-friendly web app.
 
 ---
 
-## 🛠️ Technologies Used
+## 🌟 Key Features
 
-| Technology              | Purpose                                                             |
-|-------------------------|---------------------------------------------------------------------|
-| **🐍 Python**           | Core programming language                                           |
-| **🚀 Streamlit**        | Web app framework for interactive UI                               |
-| **🔗 LangChain**        | Handles complex AI prompt workflows and multi-step reasoning        |
-| **🧠 Google Generative AI** | Powers the NLP-driven diagnosis and recommendations             |
-| **🔑 dotenv**           | Manages secure environment variable configuration                  |
+* **🩺 Symptom-Based Diagnosis**
+  Describe your vehicle’s symptoms in plain language — Auto Expert interprets and identifies potential issues.
 
----
+* **📋 Organized, Actionable Reports**
+  Get a detailed diagnosis summary with:
 
-## ⚙️ Backend Architecture
+  * Likely causes
+  * Troubleshooting and repair tips
+  * Preventive maintenance advice
 
-Auto Expert uses a modern, modular backend designed for scalability and accuracy:
+* **🖥️ User-Friendly Web App**
+  Built with **Streamlit**, the interface works seamlessly on desktop and mobile — no technical knowledge required.
 
-1. **Symptom Input**  
-   Users provide vehicle information and observed symptoms via the Streamlit interface.
+* **🤖 AI-Driven Insights**
+  Powered by **Google Generative AI** and managed through **LangChain** for deep, context-aware reasoning.
 
-2. **AI Integration**  
-   LangChain processes inputs and routes them to Google Generative AI.
-
-3. **Diagnosis Generation**  
-   - Analyzes symptoms  
-   - Identifies affected systems/components  
-   - Prioritizes issues  
-   - Explains root causes  
-   - Recommends repair strategies and prevention tips
-
-4. **Result Delivery**  
-   Outputs are rendered through Streamlit for real-time user interaction.
+* **🔐 Secure Configuration**
+  Environment variables like API keys are handled using **dotenv**, keeping your credentials safe.
 
 ---
 
-## ✅ Use Cases
+## 🧰 Tech Stack
 
-- Mechanics looking for a quick second opinion  
-- Vehicle owners diagnosing issues before service center visits  
-- DIY car enthusiasts seeking intelligent troubleshooting help  
-- Fleet managers maintaining vehicle health at scale
+* **Python** – Core application logic
+* **Streamlit** – Web app framework
+* **Google Generative AI** – Natural language processing and reasoning
+* **LangChain** – AI workflow orchestration
+* **dotenv** – Environment variable management
+
+---
+
+## ⚙️ How It Works
+
+1. **Input**: Users enter vehicle information and describe symptoms.
+2. **AI Reasoning**: LangChain routes input to Google Generative AI to analyze and infer possible issues.
+3. **Diagnosis**: Auto Expert returns a prioritized list of potential problems, their causes, and solutions.
+4. **Display**: Results are shown in an interactive web interface for immediate action.
 
 ---
 
 ## 📦 Installation & Setup
 
-Follow the steps below to run the project locally:
+Follow these steps to set up Auto Expert locally:
 
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/your-username/auto-expert.git
+1. **Clone the Repository**
+   Open a terminal and run:
+
+   ```
+   git clone https://github.com/pharshithashetty/auto-expert.git
    cd auto-expert
-````
+   ```
 
-2. **Install dependencies**
+2. **Install Dependencies**
+   Make sure you have Python installed, then run:
 
-   ```bash
+   ```
    pip install -r requirements.txt
    ```
 
-3. **Set up environment variables**
+3. **Configure Environment Variables**
    Create a `.env` file in the root directory and add your API key:
 
-   ```env
-   GOOGLE_API_KEY=your_key_here
+   ```
+   GOOGLE_API_KEY=your_api_key_here
    ```
 
-4. **Run the application**
+4. **Run the Application**
+   Start the web app with:
 
-   ```bash
+   ```
    streamlit run app.py
    ```
+
+5. **Open in Browser**
+   Streamlit will open the app automatically, or you can visit `http://localhost:8501`.
+
+---
+
+## ✅ Use Cases
+
+* **Mechanics** needing fast second opinions
+* **Vehicle owners** diagnosing issues before service visits
+* **DIY repairers** seeking troubleshooting guidance
+* **Fleet managers** monitoring and maintaining multiple vehicles
 
 ---
 
 ## 📄 License
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
+This project is licensed under the **MIT License**. See the `LICENSE` file for full details.
 
 ---
 
 ## 🙌 Contributing
 
-Contributions are welcome! Please open issues or submit pull requests to improve features, fix bugs, or enhance the UI/UX.
+We welcome contributions!
+If you’d like to add features, improve the AI prompts, or enhance the interface — please open an issue or pull request.
 
 ---
 
 ## 📬 Contact
 
-For queries, feedback, or collaborations:
+Questions or collaboration inquiries?
 📧 **[pharshithashetty@gmail.com](mailto:pharshithashetty@gmail.com)**
-
