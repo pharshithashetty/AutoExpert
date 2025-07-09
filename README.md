@@ -1,4 +1,5 @@
 
+````markdown
 # 🚗 Auto Expert – Intelligent Vehicle Diagnostic Tool
 
 **Auto Expert** is an AI-powered diagnostic assistant designed to help vehicle owners and mechanics quickly identify and understand car issues based on described symptoms. Using cutting-edge technologies, it delivers accurate, structured, and easy-to-understand diagnoses along with actionable repair and maintenance recommendations.
@@ -73,9 +74,11 @@ Auto Expert uses a modern, modular backend designed for scalability and accuracy
 
 ## 📦 Installation & Setup
 
-1. **Clone the repository**  
+Follow the steps below to run the project locally:
+
+1. **Clone the repository**
    ```bash
-   git clone https://github.com/pharshithashetty/auto-expert.git
+   git clone https://github.com/your-username/auto-expert.git
    cd auto-expert
 ````
 
@@ -86,13 +89,13 @@ Auto Expert uses a modern, modular backend designed for scalability and accuracy
    ```
 
 3. **Set up environment variables**
-   Create a `.env` file and add your API keys:
+   Create a `.env` file in the root directory and add your API key:
 
-   ```bash
+   ```env
    GOOGLE_API_KEY=your_key_here
    ```
 
-4. **Run the app**
+4. **Run the application**
 
    ```bash
    streamlit run app.py
@@ -115,6 +118,5 @@ Contributions are welcome! Please open issues or submit pull requests to improve
 ## 📬 Contact
 
 For queries, feedback, or collaborations:
-📧 **[pharshithashetty@gmail.com]**
-
+📧 **[pharshithashetty@gmail.com](mailto:pharshithashetty@gmail.com)**
 
