@@ -94,12 +94,6 @@ Follow these steps to set up Auto Expert locally:
 
 ---
 
-## 📄 License
-
-This project is licensed under the **MIT License**. See the `LICENSE` file for full details.
-
----
-
 ## 🙌 Contributing
 
 We welcome contributions!
