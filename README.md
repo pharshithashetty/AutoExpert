@@ -114,14 +114,4 @@ If you’d like to add features, improve the AI prompts, or enhance the interfac
 
 Questions or collaboration inquiries?
 📧 **[pharshithashetty@gmail.com](mailto:pharshithashetty@gmail.com)**
-## 🙌 Contributing
 
-We welcome contributions!
-If you’d like to add features, improve the AI prompts, or enhance the interface — please open an issue or pull request.
-
----
-
-## 📬 Contact
-
-Questions or collaboration inquiries?
-📧 **[pharshithashetty@gmail.com](mailto:pharshithashetty@gmail.com)**
