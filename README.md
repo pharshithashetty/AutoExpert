@@ -12,6 +12,8 @@ Auto Expert is an intelligent Python-powered diagnostic tool designed to help ve
 
 🔒 Secure Configuration: Environment variables such as API keys are managed securely using dotenv to maintain confidentiality and ease deployment.
 
+💾 Data Logging: User queries and AI recommendations are securely logged to Snowflake for analytics, auditing, and future improvements.
+
 🛠️ Technologies Used
 🐍 Python: Core programming language powering the entire application, chosen for its flexibility and strong AI ecosystem.
 
@@ -23,6 +25,8 @@ Auto Expert is an intelligent Python-powered diagnostic tool designed to help ve
 
 🔑 dotenv: Manages environment variables securely, helping to keep sensitive credentials safe and facilitating easy configuration across environments.
 
+❄️ Snowflake: Cloud data platform used to log and store user queries and AI responses for analytics and reporting.
+
 ⚙️ Backend Architecture
 The backend integrates Google Generative AI via the LangChain framework, which structures and manages the AI prompt interactions. When a user submits vehicle information and symptoms through the Streamlit interface, this input is sent to the AI model, which then:
 
@@ -33,6 +37,8 @@ The backend integrates Google Generative AI via the LangChain framework, which s
 🛠️ Lists Causes: Provides detailed explanations of possible root causes for each identified problem.
 
 🧰 Recommends Solutions: Suggests practical repair steps, troubleshooting tips, and preventive maintenance.
+
+💾 Logs Data: Each user interaction (inputs and AI outputs) is stored in Snowflake for future analysis and improvement.
 
 💻 Delivers Results: Outputs are rendered interactively on the Streamlit frontend for immediate user feedback.
 

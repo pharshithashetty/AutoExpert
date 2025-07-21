@@ -6,6 +6,10 @@ from langchain_core.runnables import RunnableLambda
 import langchain.globals as lcg
 from dotenv import load_dotenv
 
+# Add Snowflake connector import
+import snowflake.connector
+from datetime import datetime
+
 load_dotenv()
 
 lcg.set_verbose(True)
@@ -30,6 +34,47 @@ prompt_template_auto = PromptTemplate(
 )
 
 chain_auto = RunnableLambda(lambda inputs: prompt_template_auto.format(**inputs)) | model
+
+# Load Snowflake credentials from environment variables
+SNOWFLAKE_USER = os.getenv("SNOWFLAKE_USER")
+SNOWFLAKE_PASSWORD = os.getenv("SNOWFLAKE_PASSWORD")
+SNOWFLAKE_ACCOUNT = os.getenv("SNOWFLAKE_ACCOUNT")
+SNOWFLAKE_DATABASE = os.getenv("SNOWFLAKE_DATABASE")
+SNOWFLAKE_SCHEMA = os.getenv("SNOWFLAKE_SCHEMA")
+SNOWFLAKE_WAREHOUSE = os.getenv("SNOWFLAKE_WAREHOUSE")
+
+def log_to_snowflake(make, model, year, mileage, problem, symptoms, recommendations):
+    try:
+        ctx = snowflake.connector.connect(
+            user=SNOWFLAKE_USER,
+            password=SNOWFLAKE_PASSWORD,
+            account=SNOWFLAKE_ACCOUNT,
+            database=SNOWFLAKE_DATABASE,
+            schema=SNOWFLAKE_SCHEMA,
+            warehouse=SNOWFLAKE_WAREHOUSE,
+        )
+        cs = ctx.cursor()
+        insert_sql = """
+            INSERT INTO auto_expert_logs (timestamp, make, model, year, mileage, problem, symptoms, recommendations)
+            VALUES (%s, %s, %s, %s, %s, %s, %s, %s)
+        """
+        cs.execute(
+            insert_sql,
+            (
+                datetime.utcnow(),
+                make,
+                model,
+                year,
+                mileage,
+                problem,
+                symptoms,
+                recommendations,
+            ),
+        )
+        cs.close()
+        ctx.close()
+    except Exception as e:
+        st.warning(f"Could not log to Snowflake: {e}")
 
 st.markdown(
     f"""
@@ -120,6 +165,9 @@ if submit_button:
         }
 
         recommendations = chain_auto.invoke(input_data)
+
+        # Log to Snowflake after generating recommendations
+        log_to_snowflake(make, model, year, mileage, problem, symptoms, recommendations)
 
         st.markdown('<div class="subtitle">Recommendations:</div>', unsafe_allow_html=True)
         st.markdown('<div class="recommendations">', unsafe_allow_html=True)
